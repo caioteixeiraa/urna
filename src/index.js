@@ -6,7 +6,12 @@ const mongoose = require('mongoose')
 
 const dbUri = process.env.DATABASE_URI
 
-mongoose.connect(dbUri)
+const dbOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}
+
+mongoose.connect(dbUri, dbOptions)
   .then(() => {
     console.log("Database connected")
   })
