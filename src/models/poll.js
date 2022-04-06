@@ -1,10 +1,13 @@
 const mongoose = require('mongoose')
-const { ChoiceSchema } = require('../models/choice')
 
 const PollSchema = mongoose.Schema({
   id: String,
   topic: String,
-  choices: [ChoiceSchema]
+  choices: [{
+    id: String,
+    value: String,
+    numberOfVotes: Number
+  }]
 })
 
 module.exports = mongoose.model('Poll', PollSchema)
