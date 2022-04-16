@@ -1,6 +1,6 @@
 const { ApolloServer } = require('apollo-server')
-const typeDefs = require('./src/typeDefs')
-const resolvers = require('./src/resolvers')
+const typeDefs = require('./typeDefs')
+const resolvers = require('./resolvers')
 require('dotenv').config()
 const mongoose = require('mongoose')
 
@@ -23,5 +23,3 @@ const server = new ApolloServer({ typeDefs, resolvers });
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   console.log(`🚀  Server ready at ${url}`);
 });
-
-exports.handler = server.createHandler()
