@@ -1,6 +1,6 @@
 const { ApolloServer } = require('apollo-server')
-const typeDefs = require('./typeDefs')
-const resolvers = require('./resolvers')
+const typeDefs = require('./src/typeDefs')
+const resolvers = require('./src/resolvers')
 require('dotenv').config()
 const mongoose = require('mongoose')
 
